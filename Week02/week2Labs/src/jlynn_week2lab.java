@@ -1,4 +1,4 @@
-public class App {
+public class jlynn_week2lab {
     public static void main(String[] args) throws Exception {
         // create variable named age and assign 14
         int age = 14;
