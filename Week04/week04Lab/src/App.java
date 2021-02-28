@@ -75,12 +75,6 @@ public class App {
         }
 
         // add 5 values to a set of strings
-        // Set<String> set = new HashSet<String>();
-        // Set.add("To be");
-        // Set.add("or not");
-        // Set.add("To be");
-        // Set.add("That");
-        // Set.add("is the question.");
 
         // Creating an empty Set
         Set<String> set = new HashSet<String>();
