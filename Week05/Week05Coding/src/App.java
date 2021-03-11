@@ -1,15 +1,15 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        // Logger asterisk = new AsteriskLogger();
+        AsteriskLogger asterisk = new AsteriskLogger();
 
-        Logger spaced = new SpacedLogger();
+        SpacedLogger spaced = new SpacedLogger();
 
-        // asterisk.log("Please try again!");
-        // asterisk.Error("whoops-a-daisy!");
+        asterisk.logOutput("Please try again!"); // not the variable, call the method name
+        asterisk.error("whoops-a-daisy!");
 
-        // spaced.log("Stuff Happens");
-        // spaced.error("Insert nerdy phrase here");
+        spaced.log("Stuff Happens");
+        spaced.error("Insert nerdy phrase here");
 
     }// end main method
 }// end class
