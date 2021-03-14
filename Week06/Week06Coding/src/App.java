@@ -1,33 +1,49 @@
-public class App {
 
+public class App {
     public static void main(String[] args) {
 
-        // Player one = new Player("Gus");
-        // Player two = new Player("Violet");
+        // create a deck
+        Deck deck = new Deck();
+        deck.shuffle();
 
-        Card newCard = new Card();
-        newCard.displayCard();
+        // create 2 players
+        Player player1 = new Player("Bill");
+        Player player2 = new Player("Emsley");
 
-        // Deck deck = new Deck(); (can't be resolved to a type)
+        // Deal game with traditional for loop and Draw method
+        for (int i = 0; i < 52; i++) {
+            if (i % 2 == 0) {
+                player1.playerDraws(deck);
+            } else {
+                player2.playerDraws(deck);
+            }
+        }
+        // play game
+        for (int x = 0; x < 26; x++) {
+            Card player1Card = player1.flip();
+            Card player2Card = player2.flip();
+            System.out
+                    .println("player1 value: " + player1Card.getValue() + " player2 value: " + player2Card.getValue());
 
-        // for(int i= 0; i <52; i++)
-        // {
-        // if i is odd{ player one.draw[deck]}
-        // else i is even player two.draw(deck);
+            if (player1Card.getValue() > player2Card.getValue()) {
+                player1.incrementScore();
+            } else if (player1Card.getValue() < player2Card.getValue()) {
+                player2.incrementScore();
+            } else {
+                continue;
+            }
 
-        // }
+        }
 
-        // for(int g = 0; g <26; g++)
-        // {
-        // oneCard = one.flip()
-        // twoCard = two.flip()
-        // if oneCard > twoCard one.incrementScore();
-        // else two.incrementScore();
-        // }
+        // Print score if else
+        if (player1.score > player2.score) {
 
-        // if one.score > two.score print one wins
-        // else if two.score > one.score print two wins
-        // else print draw
+            System.out.println("player1 wins!");
+        } else if (player2.score > player1.score) {
+            System.out.println("player2 wins!");
+        } else {
+            System.out.println("it's a draw!");
+        } // closes socre
 
-    }// end method
-}// end class
+    }
+}

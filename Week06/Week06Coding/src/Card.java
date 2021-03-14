@@ -1,38 +1,35 @@
+
 public class Card {
-  // Variables
+  // Fields
   public int value;
   public String name;
 
-  // // getters & setters
-  // public int getValue() {
-  // return this.value;
-  // }
-
-  // public String getName() {
-  // return this.name;
-  // }
-
-  void displayCard() {
-    System.out.println("This is a card");
+  // constructor
+  public Card(int value, String name) {
+    this.value = value;
+    this.name = name;
   }
 
-  // public void setValue(int x) {
-  // this.value = x;
-  // System.out.println(value);
-  // }
+  // Getters and Setters:
+  public int getValue() {
+    return value;
+  }
 
-  // public void setName(String name) {
-  // this.name = name;
-  // }
+  public void setValue(int value) {
+    this.value = value;
+  }
 
-  // // constructor
-  // public Card(int value, String name) {
-  // setValue(value);
-  // setName(name);
-  // }
+  public String getName() {
+    return name;
+  }
 
-  // // describe: prints card info
-  // public void describe() {
-  // System.out.println("Your card is the " + this.value + "of " + this.name);
-  // }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  // Describe Cards
+  public String describeCard() {
+    return name + ", worth " + value + " points";
+  }
+
 }// end class

@@ -6,10 +6,10 @@ public class App {
         SpacedLogger spaced = new SpacedLogger();
 
         asterisk.logOutput("Please try again!"); // not the variable, call the method name
-        asterisk.error("whoops-a-daisy!");
+        asterisk.errorOutput("whoops-a-daisy!");
 
-        spaced.log("Stuff Happens");
-        spaced.error("Insert nerdy phrase here");
+        spaced.logOutput("Stuff Happens");
+        spaced.errorOutput("Insert nerdy phrase here");
 
     }// end main method
 }// end class

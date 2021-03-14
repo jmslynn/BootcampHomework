@@ -1,35 +1,39 @@
+import java.util.ArrayList;
 
-// public class Player {
-// // variable
-// Array hand = new Array[26];
-// int score;
-// String name;
+public class Player {
 
-// // methods
-// public Player(String name) {
-// this.score = 0;
-// this.name = name;
-// }
+  // fields
+  ArrayList<Card> hand = new ArrayList<Card>();
+  // ArrayList<Card> hand2 = new ArrayList<Card>();
 
-// public void describe()
-// {
-// System.out.println("Player " + this.name + " Score of " + this.score);
-// for each card in hand:
-// card.describe();
-// }
+  int score;
+  String name;
 
-// public Card flip(){
-// card = this.hand[0]
-// remove hand[0]
-// return card
+  // constructor
+  public Player(String name) {
+    this.score = 0;
+    this.name = name;
+  }
 
-// public void draw(Deck d) {
-// hand.add(d.draw());
+  // describe player
+  public void describePlayer() {
+    System.out.println(this.name + ": " + this.score + " points");
+    for (Card card : hand) {
+      card.describeCard();
+    }
+  }
 
-// }
+  public Card flip() {
+    Card myCard = this.hand.get(0);
+    this.hand.remove(0);
+    return myCard;
+  }
 
-// public void incrementScore() {
-// this.score++;
-// }
+  public void playerDraws(Deck deck) {
+    this.hand.add(deck.deckDraws());
+  }
 
-// } // end class
+  public void incrementScore() {
+    this.score++;
+  }
+}

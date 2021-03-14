@@ -1,46 +1,43 @@
-// public class Deck {
+import java.util.ArrayList;
+import java.util.Collections;
 
-// // Variables
-// private List<Card> myDeck = new ArrayList<Card>();
+public class Deck {
+  ArrayList<Card> theDeck = new ArrayList<Card>();
 
-// // methods
-// shuffle (randomizes the order
+  private static final String[] suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
 
-// draw (removes and returns the top card of the cards field)
+  private static final String[] names = { "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+      "Jack", "Queen", "King", "Ace" };
 
-// //constructor
+  // constructor:
+  public Deck() {
+    this.createDeck();
+  }
 
-// {
-// this.myDeck = createDeck();
-// }
+  // method draw
+  public Card deckDraws() {
+    Card drawCard = this.theDeck.get(0);
+    this.theDeck.remove(0);
+    System.out.println(drawCard.describeCard());
+    return drawCard;
+  }
 
-// public Card draw() {
-// return this.cards.get(0);
-// }
+  // method createDeck
+  public void createDeck() {
+    for (String suit : suits) {
+      for (int i = 2; i <= 14; i++) {
+        String cardName = names[i - 2] + " of " + suit;
+        Card card = new Card(i, cardName);
+        this.theDeck.add(card);
+      }
+    }
+  }
 
-// public void shuffle() {
-// Collections.shuffle(this.cards);
-// }
+  // shuffle
+  public void shuffle() {
+    {
+      Collections.shuffle(this.theDeck);
+    }
 
-// // Method
-// public ArrayList createDeck()
-// {
-// Arrry newCardset [52]
-
-// suitList [Diamonds, Hearts, clubs, Spades]
-
-// [2, Daimond]
-
-// index = 0;
-// for each suit
-// for i = 2 i =14; i++
-// {
-// Card newCard = new Card(i, suit)
-// newCardset[index];
-// index++;
-
-// }
-
-// }return newCardset;
-
-// } // Full deck
+  }
+}
