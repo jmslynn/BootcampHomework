@@ -32,15 +32,15 @@ public class ProductDao {
     while (rs.next()) {
       // must have all
       products.add(populateProductList(rs.getInt(1), rs.getString(2), rs.getString(3)));
-      System.out.println("from list: id " + products.get(0).getProdId());
-      System.out.println("from getProducts: id " + rs.getInt(1));
+      // System.out.println("from list: id " + products.get(0).getProdId());
+      // System.out.println("from getProducts: id " + rs.getInt(1));
 
     }
     return products;
   }
 
   private Product populateProductList(int id, String name, String brand) {
-    System.out.println("from populateProductList: " + id + name + brand);
+    // System.out.println("from populateProductList: " + id + name + brand);
     return new Product(id, name, brand);
   }
 

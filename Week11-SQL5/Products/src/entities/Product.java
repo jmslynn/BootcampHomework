@@ -15,7 +15,6 @@ public class Product {
     this.brand = brand;
   }
 
-
   // getters and setters
   public int getProdId() {
     return prodId;
