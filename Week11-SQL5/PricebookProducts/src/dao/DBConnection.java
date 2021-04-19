@@ -7,9 +7,10 @@ import java.sql.SQLException;
 public class DBConnection {
   // holds connection string, static so belongs to the class instead of the
   // instance, only one shared by whole app
-  private final static String URL = "jdbc:mysql://localhost:3306/teams";
+  private final static String URL = "jdbc:mysql://localhost:3306/products";
   private final static String USERNAME = "root";
   private final static String PASSWORD = "Dolphins";
+  // connection
   private static Connection connection;
   // singleton pattern, allows use of connection outside the class
   private static DBConnection instance;
@@ -17,7 +18,6 @@ public class DBConnection {
   // constructor
   // private so cannot construct an instance from outside this class
   private DBConnection(Connection connection) {
-    // DBConnection.connection = connection--should work better
     this.connection = connection;
   }
 
