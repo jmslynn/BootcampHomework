@@ -19,14 +19,14 @@ constructor(name, products) {
   this.products = [];
 }
 
-//just copied and adjusted this from menu demo. how does it work and why do we need it?...try cutting this out
-addProduct(product) {
-  if (product instanceof Product) {
-    this.products.push(product); 
-  } else {
-    throw new Error('You can only add an instance of Product. Argument is not a product: ${product}');
-  }
-}
+//just copied and adjusted this from menu demo. how does it work and is it used?.
+// addProduct(product) {
+//   if (product instanceof Product) {
+//     this.products.push(product); 
+//   } else {
+//     throw new Error('You can only add an instance of Product. Argument is not a product: ${product}');
+//   }
+// }
 
 describe() {
 return `category: ${this.name}`
@@ -34,7 +34,6 @@ return `category: ${this.name}`
 } //end category class
 
 class Menu {
-//why doesn't this constructor get passed any values?...nothing goes outside of it
 constructor() {
   this.categories = [];
   this.selectedCategory = null;
@@ -67,6 +66,7 @@ selection = this.showMainMenu();
 
 showMainMenu() {
   return prompt(`
+  MAIN MENU
   0) exit program
   1) create a new category
   2) view all categories
@@ -77,6 +77,7 @@ showMainMenu() {
 
 showCategoryMenu(categoryInfo) {
   return prompt(`
+  PRODUCT MENU
   0) back to main menu
   1) add a product
   2) delete a product
@@ -98,19 +99,18 @@ this.categories.forEach((category, index) => {
 }
 
 showACategory() {
-  let index = prompt('Enter the number for the category:');
+  let index = prompt('Enter category number to display:');
   if (index > -1 && index < this.categories.length) {
 this.selectedCategory = this.categories[index];
 //why not use the describe function here?
 let description = 'Category: ' + this.selectedCategory.name + '\n';
 let productString = '';
-this.selectedCategory.products.forEach((product, index) => {
-  productString += index + ') ' + product.describe() + '\n';
-  })
-// for (let i=0; i < this.selectedCategory.products.length; i++) {
-//   description += i + ') ' + this.selectedCategory.products[i].brand 
-//   + ' ' + this.selectedCategory.products[i].product + ', ' + this.selectedCategory.size + '\n';
-// }
+for (let i=0; i < this.selectedCategory.products.length; i++) {
+  description += i + ') ' + //this.products.describe();
+  
+  this.selectedCategory.products[i].brand 
+  + ' ' + this.selectedCategory.products[i].product + '\n';
+}
 let selection = this.showCategoryMenu(description);
 switch (selection) {
   case '1': 
@@ -123,7 +123,7 @@ switch (selection) {
 }
 
 deleteACategory() {
-  let index = prompt('Enter the number for the category you wish to delete:');
+  let index = prompt('Enter category number to delete:');
   if (index > -1 && index < this.categories.length) {
     this.categories.splice(index, 1);
   }
