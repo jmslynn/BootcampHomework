@@ -10,5 +10,21 @@ button.addEventListener('click', () => {
 });
 
 document.getElementById('remove').addEventListener('click', () => {
-  content.parentNode.removeChild(content);
+  let idToRemove = document.getElementById('remove-id').value;
+  let elementToRemove = document.getElementById(idToRemove);
+  elementToRemove.parentNode.removeChild(elementToRemove);
+  document.getElementById('remove-id').value = '';
 });
+
+let id=0;
+
+
+document.getElementById('add').addEventListener('click', () => {
+let parent = document.getElementById('paragraphs');
+let newElement = document.createElement('p');
+newElement.innerHTML = document.getElementById('new-text').value;
+newElement.setAttribute('id', id++);
+parent.appendChild(newElement);
+document.getElementById('new-text').value='';
+});
+
