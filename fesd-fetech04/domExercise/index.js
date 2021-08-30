@@ -28,3 +28,17 @@ parent.appendChild(newElement);
 document.getElementById('new-text').value='';
 });
 
+//quiz question week 4
+//listen for the click
+document.getElementById('p-button').addEventListener('click', () => {
+  //find the parent element for the paragraph
+  let parent = document.getElementById('p-div');
+  //create the paragraph element
+  let newElement = document.createElement('p');
+  //write the words
+  newElement.innerHTML = document.getElementById('p-input').value;
+  //add the element
+  parent.appendChild(newElement);
+  //clear the field
+  document.getElementById('p-input').value='';
+  });
