@@ -2,6 +2,9 @@ import React from 'react';
 
 export default class LikeButton extends React.Component {
   render() {
-    return React.createElement('button', {class: 'btn btn-primary'}, 'Like');
+    //with jsx
+    return <button className="btn btn-secondary">Like</button>;
+    // without jsx
+    // return React.createElement('button', {class: 'btn btn-primary'}, 'Like');
   }
 }

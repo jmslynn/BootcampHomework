@@ -7,9 +7,15 @@ import NewsFeed from './components/news-feed'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  React.createElement(NewsFeed, {}, null),
+  //with jsx
+  <NewsFeed />,
   document.getElementById('root')
-);
+  );
+
+  // without jsx
+  // React.createElement(NewsFeed, {}, null),
+  // document.getElementById('root')
+//);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

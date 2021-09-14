@@ -6,10 +6,18 @@ let e = React.createElement;
 
 export default class NewsFeed extends React.Component {
   render() {
-    return e('div', {class: 'container'}, 
-    e(Post, {}, null),
-    e(Post, {}, null),
-    e(Post, {}, null)
+    //with jsx
+    return (
+      <div className="container">
+        <Post />
+        <Post />
+      </div>
     );
+    // without jsx
+    // return e('div', {class: 'container'}, 
+    // e(Post, {}, null),
+    // e(Post, {}, null),
+    // e(Post, {}, null)
+    // );
   }
 }
