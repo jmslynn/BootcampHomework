@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 //import App from './App';
-import Container from './container';
+//import Container from './container';
 import reportWebVitals from './reportWebVitals';
+import SecondCounterContainer from './second-counter-container';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Container />
-    {/* <App /> */}
-  </React.StrictMode>,
+    //<Container />,
+    <SecondCounterContainer />,
   document.getElementById('root')
 );
 
