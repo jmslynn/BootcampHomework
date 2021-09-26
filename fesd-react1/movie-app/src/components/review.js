@@ -6,10 +6,9 @@ export default class Review extends Component {
       <div className="card mx-2 w-75">
         <div className="card-body">
           <h5 className="card-title">
-          {this.props.review.user_name}
-          {this.props.review.stars}
-          {this.props.review.review}
-A review <button>More...</button>
-</h5> </div> </div>  )
+            A review by: {this.props.review.user_name}. 
+          Rating: {this.props.review.stars}/5 stars</h5>
+         <p> Review: {this.props.review.review}</p>
+ </div> </div>  )
   }
 }
